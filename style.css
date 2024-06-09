@@ -1,0 +1,204 @@
+/* 既存のCSS */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ccc; /* 通常モードの背景色を灰色に設定 */
+    color: #333;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+header {
+    background-color: #d4a017; /* 彩度を上げて明度を少し下げた黄土色 */
+    color: #333;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff6347;
+}
+
+main {
+    padding: 50px 0;
+}
+
+section {
+    padding: 50px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+section p {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-grid, .character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.product-item, .character-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover, .character-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img, .character-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-item h3, .character-item h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.product-item p, .character-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* デザイン切り替え用 */
+body.hacker-mode {
+    background-color: #000 !important; /* ハッカーモードの背景色を黒に設定 */
+    color: #800080 !important; /* ハッカーモードの文字色を紫に設定 */
+}
+
+body.hacker-mode header {
+    background-color: #000 !important; /* ハッカーモードのヘッダーを黒に設定 */
+    color: #800080 !important;
+}
+
+body.hacker-mode header nav ul li a {
+    color: #800080 !important;
+}
+
+body.hacker-mode header nav ul li a:hover {
+    color: #fff;
+}
+
+body.hacker-mode .product-item, body.hacker-mode .character-item {
+    background-color: #111 !important;
+    border-color: #800080 !important;
+    color: #800080 !important;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.5) !important;
+}
+
+#changeDesignButton {
+    background-color: #000;
+    color: #800080;
+    border: 2px solid #800080;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#changeDesignButton:hover {
+    background-color: #800080;
+    color: #000;
+}
+
+/* フォームのサイズ変更 */
+iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    iframe {
+        height: 600px; /* スマホ向けの高さ */
+    }
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+
+    section p {
+        font-size: 1em;
+    }
+
+    .product-item, .character-item {
+        padding: 15px;
+    }
+}
